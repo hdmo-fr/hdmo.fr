@@ -1,0 +1,300 @@
+<!doctype html>
+<html>
+  <head>
+    <title>La Horde Des Mondes Oubliés</title>
+    <!-- https://github.com/jekuer/add-to-calendar-button -->
+    <link rel="stylesheet" href="third-party/atcb/atcb.min.css">
+    <script src="third-party/atcb/atcb.min.js" defer></script>
+    
+    <style>
+      p {
+        /*text-align: justify;*/
+        font-size: 1.1em;
+      }
+      main {
+        background: rgba(255, 255, 255, 0.95);
+        max-width: 720px;
+        margin: auto;
+        margin-top: 30vh;
+        padding: 12px;
+        border-radius: 4px 4px 0 0;
+      }
+      @media (max-width: 760px) {
+        main {
+          margin-left: 12px;
+          margin-right: 12px;
+        }
+      }
+      section {
+        margin-top: 32px;
+        margin-bottom: 32px;
+      }
+      .date {
+        font-size: 1.3em;
+        font-weight: bold;
+      }
+      h1,h2,h3 {
+        margin: 0;
+      }
+      .organized {
+        /*opacity: .7;*/
+        text-align: right;
+      }
+      #register {
+        margin: auto;
+        max-width: 720px;
+        border: 1px solid grey;
+        border-radius: 4px;
+        padding: 12px;
+        display: none;
+      }
+      #register:target {
+        display:block;
+      }
+      #register ul {
+        list-style-type: none;
+        padding: 0;
+        margin-top: 0;
+      }
+      #thanks {
+        display: none;
+      }
+      #thanks:target {
+        display: block;
+        background-color: yellow;
+        padding: 12px;
+        font-size: 1.4em;
+        border-radius: 6px;
+        text-align: center;
+      }
+      button, .atcb_button {
+        background-color: yellow;
+        color: black;
+        border: none;
+        border-radius: 4px;
+        padding: .4em 1em;
+        font-weight: bold;
+        font-size: 1.11em;
+        cursor: pointer;
+        align-items: center;
+        box-shadow: none;
+        margin-top: 6px;
+      }
+      button:hover, .atcb_button:hover {
+        background: #1d2d35;
+        color: #ffe000;
+      }
+      button:hover svg * {
+        fill: #ffe000 !important;
+      }
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      #background {
+        /*width: 100%;*/
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        margin: auto;
+        z-index: -1;
+        background-size: cover;
+        background-position: center;
+        width: 100vw;
+        /*height: 100vh;*/
+      }
+      .icon {
+        width: 16px;
+        height: 16px;
+        margin-left: 0;
+        margin-right: 4px;
+      }
+      .rotate-left {
+        transform: rotate(-90deg);
+        display: inline-block;
+      }
+      .submit {
+        background-color: yellow;
+        color: black;
+        border: none;
+        border-radius: 4px;
+        padding: .4em 1em;
+        font-weight: bold;
+        font-size: 1em;
+      }
+      .fill-black * {
+        fill: black;
+      }$
+      input[type=text] {
+        /*width: 100%;*/
+        /*padding: 12px 20px;
+        margin: 12px 0;
+        box-sizing: border-box;*/
+      }
+
+      .atcb_button {
+        display: inherit;
+      }
+      .atcb_button.atcb_active {
+        padding: .4em 1em;
+        background: #1d2d35;
+        color: #ffe000;
+      }
+      .atcb_button.atcb_active svg * {
+        fill: #ffe000 !important;
+      }
+
+
+      a {
+        color: black;
+        text-decoration-color: #ffe000;
+        text-decoration-thickness: 3px;
+        transition: all 0.2s ease;
+      }
+      a:hover {
+        color: black;
+        background-color: #ffe000;
+        text-decoration-color: black;
+        text-decoration-thickness: 2px;
+      }
+      a:visited {
+
+      }
+    </style>
+  </head>
+  <body>
+    <img id="background" src="background.png" />
+    <main>
+        <button onclick="window.location.href='#register'">
+          <!-- &#9876; -->
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 387.172 389.194" class="icon fill-black">
+            <g id="Groupe_126" data-name="Groupe 126" transform="translate(595.442 1079.195) rotate(180)">
+              <g id="Groupe_25" data-name="Groupe 25" transform="translate(208.411 690.337)">
+                <path id="Exclusion_1" data-name="Exclusion 1" d="M41.442,133.5a30.869,30.869,0,0,1-7.741-1.181c-.6-1-5.686-9.774-3.5-14.632,2.28-5.086,12.629-5.945,12.733-5.953L71.439,81.716,26.025,34.768c-.659-.029-16.122-.869-22.2-9.2C-2.391,17.035.831.425.864.258A.624.624,0,0,1,1,.238C3.171.041,5.163,0,6.452,0,12.444,0,20.7.818,26.026,4.716c8.544,6.257,9.4,20.706,9.407,20.852L82.076,72.82,113.142,41.44c.016-.945.3-9.239,4.369-12.084a9.129,9.129,0,0,1,5.274-1.343,26.6,26.6,0,0,1,7.646,1.342c.522.74,4.962,7.269,3.435,12.084-1.6,5.021-9.826,8.244-9.909,8.276L97.594,77.278,111.863,91.31v20.419H89.476L74.853,99.409l-23.41,22.249c-.032.832-.454,8.145-4.635,10.657A10.461,10.461,0,0,1,41.442,133.5ZM87.98,87.729v12.438l13.157,2.076-1.319-12.6Z" transform="translate(0 0)" fill="#fff"/>
+              </g>
+              <g id="Groupe_26" data-name="Groupe 26" transform="translate(593.718 690) rotate(90)">
+                <path id="Exclusion_2" data-name="Exclusion 2" d="M41.441,133.491a30.27,30.27,0,0,1-7.737-1.185c-.6-1-5.686-9.767-3.513-14.623,2.29-5.1,12.639-5.945,12.743-5.953L71.442,81.706,26.029,34.768c-.659-.029-16.122-.869-22.2-9.2C-2.4,17.036.834.425.867.258A.634.634,0,0,1,1.005.239C3.174.041,5.166,0,6.456,0c5.992,0,14.252.818,19.573,4.716,8.544,6.257,9.39,20.706,9.4,20.852L82.08,72.821,113.146,41.44c.016-.945.3-9.239,4.369-12.084a9.085,9.085,0,0,1,5.27-1.347,26.751,26.751,0,0,1,7.651,1.347c.522.74,4.961,7.269,3.424,12.084-1.593,5.021-9.816,8.244-9.9,8.276L97.588,77.278l14.278,14.032v20.419H89.47L74.857,99.409l-23.41,22.249c-.032.832-.454,8.144-4.635,10.647A10.452,10.452,0,0,1,41.441,133.491ZM87.984,87.729v12.438l13.147,2.076-1.319-12.6Z" transform="translate(0 0)" fill="#fff"/>
+              </g>
+              <path id="Tracé_145" data-name="Tracé 145" d="M26.432,211.349,167.448,70.02,99.57,2.631h23.721v-20.26l66.551,67.281,70.1-70.267V.976h21.141L51.152,230.464S4.19,267.591-1.99,262.812,26.432,211.349,26.432,211.349Z" transform="translate(211 813.222)" fill="#fff"/>
+              <path id="Tracé_146" data-name="Tracé 146" d="M18.916-3.935,155.333,132.244s27.46,38.277,22.211,43.82-43.208-21.651-43.208-21.651L-2.881,17Z" transform="translate(417.232 902.387)" fill="#fff"/>
+            </g>
+          </svg>
+          Participer
+        </button>
+        <button onclick="const self=this;navigator.clipboard.writeText('hdmo.fr/demo-compiegne-avril-2022').then(self.innerHTML='<span class=\'rotate-left\'>&#10549;</span> Lien copié !');"><span class="rotate-left">&#10549;</span> Partager</button>
+        <button onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=hdmo.fr/demo-compiegne-avril-2022')"><span class="rotate-left">&#10549;</span> Facebook</button>
+        <div class="atcb" style="display:none;">
+          {
+            "name":"Démonstrations de combat au Marché de l'Histoire de Compiègne",
+            "description":"OYE OYE\nAppel à tous les combattants qui pratique l'escrime en armure ou l'AMHE, La Horde Des Mondes Oubliés a besoin de vous pour faire des démonstrations au Marché de l'Histoire de Compiègne le Samedi 9 Avril et/ou le Dimanche 10 Avril 2022. L'avantage ? Vous faites de l'escrime et l'entrée au marché est gratuite pour vous ! Veuillez nous contacter au plus vite par l'évènement Combat AMHE et Armure ou par message privé.\nPS: nous pouvons prêter de l'équipement s'il vous en manque une partie (casque, gants, ...), mais prévenez-nous 😉",
+            "startDate":"2022-04-09",
+            "endDate":"2022-04-10",
+            "location":"2 rue Jean Mermoz, 60280 Margny-lès-Compiègne",
+            "label":"Ajouter à mon Calendrier",
+            "timeZone":"Europe/Paris",
+            "timeZoneOffset":"+01:00",
+            "options":[
+              "Apple",
+              "Google",
+              "iCal",
+              "Microsoft365",
+              "MicrosoftTeams",
+              "Outlook.com",
+              "Yahoo"
+            ],
+            "inline":true
+          }
+        </div>
+      
+      
+      <p class="date">📅  9 - 10 Avril 2022</p>
+      <h1>Démonstrations de combat Armure/AMHE</h1>
+      <h2><a hred="https://www.histoire-vivante.org/evenement/marche-de-lhistoire-compiegne-60-avril-2022" target="_blank">Marché de l'Histoire de Compiègne</a></h2>
+      <a href="https://www.qwant.com/maps/place/addr:2.795422;49.439376:2?q=2+rue+Jean+Mermoz%2C+60280+Margny-l%C3%A8s-Compi%C3%A8gne&client=direct-search" target="_blank">2 rue Jean Mermoz, 60280 Margny-lès-Compiègne</a>
+
+      <section>
+        <h3>OYE OYE</h3>
+        <p>Appel à tous les combattants qui pratique l’escrime en armure ou l’AMHE, la Horde Des Mondes Oubliés a besoin de vous pour faire des démonstrations au Marché de l’Histoire de Compiègne le Samedi 9 Avril et/ou le Dimanche 10 Avril 2022. <strong>L’avantage ? Vous faites de l’escrime et l’entrée au marché est gratuite pour vous !</strong></p>
+        <p><em>PS: nous pouvons éventuellement prêter de l’équipement s’il vous en manque une partie (casque, gants, …), mais prévenez-nous</em> 😉</p>
+        
+        <p class="organized">
+          Organisé par <strong>La Horde Des Mondes Oubliés</strong><br />
+          &#128238; <a href="mailto:contact@hdmo.fr">Mail</a>, <a href="https://discordapp.com/channels/@me/262720508464726019/">Discord</a>, <a href="https://m.me/100001760596681" target="_blank">Messenger</a>
+        </p>
+      </section>
+      <section id="register">
+        <form action="mailto:register@hdmo.fr?subject=Inscription aux démonstrations de combat pour Compiègne" method="post" enctype="text/plain" onsubmit="location.href='#thanks'">
+          <h1>Formulaire d'inscription</h1>
+
+          <p><label for="fname">Nom</label> <input type="text" id="fname" name="fname"></p>
+          <p><label for="lname">Prénom</label> <input type="text" id="lname" name="lname"></p>
+          <p><label for="sname">Surnom</label> <input type="text" id="sname" name="sname"></p>
+          <p><label for="company">Compagnie</label> <input type="text" id="company" name="company"></p>
+  
+          Samedi 9 Avril 2022
+          <ul>
+            <li>
+              <input type="checkbox" name="saturday" value="AM">
+              <label for="AM">11h - 12h</label>
+            </li>
+            <li>
+              <input type="checkbox" name="saturday" value="PM">
+              <label for="PM">14h - 15h</label>
+            </li>
+          </ul>
+          
+          Dimanche 10 Avril 2022
+          <ul>
+            <li>
+              <input type="checkbox" name="sunday" value="AM">
+              <label for="AM">11h - 12h</label>
+            </li>
+            <li>
+              <input type="checkbox" name="sunday" value="PM">
+              <label for="PM">14h - 15h</label>
+            </li>
+          </ul>
+  
+          Équipement
+          <ul>
+            <li>
+              <input type="checkbox" name="kit" value="Armure">
+              <label for="Armure">Armure</label>
+            </li>
+            <li>
+              <input type="checkbox" name="kit" value="AMHE">
+              <label for="AMHE">AMHE</label>
+            </li>
+            <li>
+              <input type="checkbox" name="fullkit" value="full" />
+              <label for="fullkit">Mon matériel est complet</label>
+            </li>
+          </ul>
+          
+          <label for="comment">Commentaire</label><br />
+          <textarea id="comment" name="comment" rows="4" cols="50" placeholder="Vous pouvez par exemple décrire le matériel dont vous avez besoin">
+          </textarea><br /><br />
+  
+          <input type="submit" class="submit" />
+        </form>
+      </section>
+      <section id="thanks">
+        Merci pour votre inscription, hâte de vous retrouver à Compiègne pour battre le fer !<br /><br />
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 387.172 389.194" class="fill-black">
+          <g id="Groupe_126" data-name="Groupe 126" transform="translate(595.442 1079.195) rotate(180)">
+            <g id="Groupe_25" data-name="Groupe 25" transform="translate(208.411 690.337)">
+              <path id="Exclusion_1" data-name="Exclusion 1" d="M41.442,133.5a30.869,30.869,0,0,1-7.741-1.181c-.6-1-5.686-9.774-3.5-14.632,2.28-5.086,12.629-5.945,12.733-5.953L71.439,81.716,26.025,34.768c-.659-.029-16.122-.869-22.2-9.2C-2.391,17.035.831.425.864.258A.624.624,0,0,1,1,.238C3.171.041,5.163,0,6.452,0,12.444,0,20.7.818,26.026,4.716c8.544,6.257,9.4,20.706,9.407,20.852L82.076,72.82,113.142,41.44c.016-.945.3-9.239,4.369-12.084a9.129,9.129,0,0,1,5.274-1.343,26.6,26.6,0,0,1,7.646,1.342c.522.74,4.962,7.269,3.435,12.084-1.6,5.021-9.826,8.244-9.909,8.276L97.594,77.278,111.863,91.31v20.419H89.476L74.853,99.409l-23.41,22.249c-.032.832-.454,8.145-4.635,10.657A10.461,10.461,0,0,1,41.442,133.5ZM87.98,87.729v12.438l13.157,2.076-1.319-12.6Z" transform="translate(0 0)" fill="#fff"/>
+            </g>
+            <g id="Groupe_26" data-name="Groupe 26" transform="translate(593.718 690) rotate(90)">
+              <path id="Exclusion_2" data-name="Exclusion 2" d="M41.441,133.491a30.27,30.27,0,0,1-7.737-1.185c-.6-1-5.686-9.767-3.513-14.623,2.29-5.1,12.639-5.945,12.743-5.953L71.442,81.706,26.029,34.768c-.659-.029-16.122-.869-22.2-9.2C-2.4,17.036.834.425.867.258A.634.634,0,0,1,1.005.239C3.174.041,5.166,0,6.456,0c5.992,0,14.252.818,19.573,4.716,8.544,6.257,9.39,20.706,9.4,20.852L82.08,72.821,113.146,41.44c.016-.945.3-9.239,4.369-12.084a9.085,9.085,0,0,1,5.27-1.347,26.751,26.751,0,0,1,7.651,1.347c.522.74,4.961,7.269,3.424,12.084-1.593,5.021-9.816,8.244-9.9,8.276L97.588,77.278l14.278,14.032v20.419H89.47L74.857,99.409l-23.41,22.249c-.032.832-.454,8.144-4.635,10.647A10.452,10.452,0,0,1,41.441,133.491ZM87.984,87.729v12.438l13.147,2.076-1.319-12.6Z" transform="translate(0 0)" fill="#fff"/>
+            </g>
+            <path id="Tracé_145" data-name="Tracé 145" d="M26.432,211.349,167.448,70.02,99.57,2.631h23.721v-20.26l66.551,67.281,70.1-70.267V.976h21.141L51.152,230.464S4.19,267.591-1.99,262.812,26.432,211.349,26.432,211.349Z" transform="translate(211 813.222)" fill="#fff"/>
+            <path id="Tracé_146" data-name="Tracé 146" d="M18.916-3.935,155.333,132.244s27.46,38.277,22.211,43.82-43.208-21.651-43.208-21.651L-2.881,17Z" transform="translate(417.232 902.387)" fill="#fff"/>
+          </g>
+        </svg>
+      </section>
+    </main>
+  </body>
+</html>
+<!--(mail: https://mailtrap.io/blog/javascript-send-email/)-->
