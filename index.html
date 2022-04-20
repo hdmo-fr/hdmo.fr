@@ -1,10 +1,493 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="fr">
   <head>
-    <title>La Horde Des Mondes Oubliés</title>
-    <meta http-equiv="refresh" content="0; url=https://www.hdmo.fr/demo-compiegne-avril-2022.html" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>La Horde des Mondes Oubliés (HDMO)</title>
+
+    <!-- Meta tags for SEO and social sharing -->
+    <link rel="canonical" href="https://glitch-hello-website.glitch.me/" />
+    <meta
+      name="description"
+      content="A simple website, built with Glitch. Remix it to get your own."
+    />
+    <meta name="robots" content="index,follow" />
+    <meta property="og:title" content="Hello World!" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://glitch-hello-website.glitch.me/" />
+    <meta
+      property="og:description"
+      content="A simple website, built with Glitch. Remix it to get your own."
+    />
+    <meta
+      property="og:image"
+      content="https://cdn.glitch.com/605e2a51-d45f-4d87-a285-9410ad350515%2Fhello-website-social.png?v=1616712748147"
+    />
+    <meta name="twitter:card" content="summary" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      html,
+      body {
+        margin: 0;
+        height: 100%;
+        background: black;
+        color: white;
+        scroll-behavior: smooth;
+      }
+
+      body {
+        overflow-x: hidden;
+        max-width: 100%;
+      }
+      
+      main {
+        margin: 0;
+      }
+
+      #s-intro {
+        font-family: "MedievalSharp", cursive;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        height: 100vh;
+        margin: 0;
+        text-align: center;
+        margin-bottom: 24px;
+      }
+
+      #s-intro h2 {
+        margin-top: 0;
+        margin-bottom: 24px;
+        font-size: 3vw;
+      }
+
+      .button {
+        all: unset;
+        background: #ffe388;
+        color: black;
+        z-index: 1;
+        padding: 12px 24px;
+        font-size: 0.7em;
+        font-family: "MedievalSharp", cursive;
+        border-radius: 8px;
+        margin: 12px;
+        font-weight: bold;
+        border: none;
+        cursor: pointer;
+        display: inline-block;
+      }
+
+      .button:hover {
+        background: black;
+        color: #ffe388;
+        outline: solid 1px #ffe388;
+      }
+
+      #hdmo {
+        font-size: 11vw;
+        line-height: 12vw;
+        text-transform: uppercase;
+        margin: 0;
+      }
+
+      #video-background {
+        position: absolute;
+        height: 100%;
+        opacity: 0.3;
+      }
+      
+      @media (min-width: 1180px) {
+        #video-background {
+          width: 100%;
+        }
+      }
+
+      header {
+        font-family: "MedievalSharp", cursive;
+        position: sticky;
+        top: 0;
+        height: 90px;
+        width: 100%;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1;
+        background: linear-gradient(
+          0deg,
+          rgba(0, 0, 0, 0.7) 0%,
+          rgb(0, 0, 0) 100%
+        );
+
+        font-size: 2vw;
+      }
+
+      header h1 {
+        margin-left: 12px;
+        font-size: clamp(16px, 2.5vw, 54px);
+      }
+
+      #s-intro header {
+        position: absolute;
+        top: 0;
+        background: none;
+        font-size: clamp(16px, 2vw, 54px);
+        gap: 6vw;
+      }
+
+      #s-intro header a {
+        color: white;
+      }
+
+      footer {
+        height: 90px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1;
+        font-size: clamp(16px, 2vw, 54px);
+        padding: 0 10%;
+      }
+
+      section {
+        margin: 0 15% 0 15%;
+        font-size: clamp(16px, 4vw, 54px);
+      }
+
+      p {
+        text-align: justify;
+      }
+
+      #cfeha {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .med {
+        width: 100%;
+        overflow: hidden;
+        height: 420px;
+        height: 240px;
+        font-size: clamp(16px, 2vw, 54px);
+      }
+      .med img {
+        width: 50%;
+        height: 80%;
+        object-fit: cover;
+        float: left;
+        margin-right: 24px;
+      }
+      .med span {
+        display: block;
+      }
+
+      /*
+      img {
+        width: 60%;
+        
+      }
+      
+      .img-left {
+        float: left;
+        margin-right: 24px;
+        margin-left: -25%;
+      }
+      .img-right {
+        float: right;
+        margin-left: 24px;
+        margin-right: -25%;
+      }
+      */
+    </style>
   </head>
   <body>
-    Site en construction...
+    <main>
+      <section id="s-intro">
+        <iframe
+          id="video-background"
+          width="1189"
+          height="669"
+          src="https://www.youtube.com/embed/LZ6dZbyBVBc?list=PLL33Ob1yK1iB5NhyKXeCHFjP27u1Fj1Cp&controls=0&autoplay=1&mute=1"
+          title="YouTube video player"
+          frameborder="0"
+          allow="autoplay"
+          style="pointer-events: none"
+        ></iframe>
+        <header>
+          <a href="#who">Qui sommes nous ?</a>
+          <!--<a href="">Prestations</a>-->
+          <a href="#agenda">Agenda</a>
+          <a href="#recrut">Recrutement</a>
+        </header>
+        <h1 id="hdmo">La Horde Des Mondes Oubliés</h1>
+        <h2>Troupe de mercenaires XIV-XVème</h2>
+        <a class="button" href="mailto:contact@hdmo.fr" target="_blank"
+          >Nous Contacter</a
+        >
+      </section>
+      <header id="who">
+        <a
+          href="#s-intro"
+          style="
+            all: unset;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+          "
+        >
+          <svg
+            class="ïcon"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            height="80%"
+            viewBox="0 0 262.8 387.389"
+          >
+            <defs>
+              <filter
+                id="Union_2"
+                x="0"
+                y="0"
+                width="262.8"
+                height="387.389"
+                filterUnits="userSpaceOnUse"
+              >
+                <feOffset dy="3" input="SourceAlpha" />
+                <feGaussianBlur stdDeviation="3" result="blur" />
+                <feFlood flood-opacity="0.161" />
+                <feComposite operator="in" in2="blur" />
+                <feComposite in="SourceGraphic" />
+              </filter>
+            </defs>
+            <g
+              id="Groupe_118"
+              data-name="Groupe 118"
+              transform="translate(-1049.2 -3580)"
+            >
+              <g
+                id="Groupe_116"
+                data-name="Groupe 116"
+                transform="translate(1001 3337)"
+              >
+                <g
+                  transform="matrix(1, 0, 0, 1, 48.2, 243)"
+                  filter="url(#Union_2)"
+                >
+                  <path
+                    id="Union_2-2"
+                    data-name="Union 2"
+                    d="M-949.719-3005.563a356.459,356.459,0,0,1-51.28-41.959V-3297h0v-40h34v38.953h35.8V-3337h34v38.953h36V-3337h34v38.953h37V-3337h34v289.478s-24.7,26.466-56.051,46.445-69.343,33.466-69.343,33.466S-919.867-2985.586-949.719-3005.563Z"
+                    transform="translate(1010 3343)"
+                    fill="#ffe388"
+                  />
+                </g>
+              </g>
+              <g
+                id="Groupe_117"
+                data-name="Groupe 117"
+                transform="translate(982 3337)"
+              >
+                <path
+                  id="Tracé_177"
+                  data-name="Tracé 177"
+                  d="M-9.47,28.036S20.23-5.1,21.622-8.565a10.123,10.123,0,0,0,0-6.9s-2.861-1.117-7.785,2.968S1.926.875,1.926.875l-7.609.676L11.862-17.822s1.33-1.79,4.986-2.835A54.7,54.7,0,0,1,26.485-22s8.822-14.536,18.1-24.611,11.176-15.245,19-15.691S75.9-48.4,75.9-48.4s.942,7.506,0,11.776-3.767,5.3-3.767,5.3-3.342.049-3.854-1.277,1.6-5.355,1.6-5.355a17.693,17.693,0,0,0-.4-7.154c-1.041-3.327-1.483-4.551-4.362-4.363s-3.5,1.368-6.55,4.363a25.645,25.645,0,0,0-4.832,7.154,190.313,190.313,0,0,0-7.545,22.487A197.928,197.928,0,0,0,41.844,8.141L40.4,20.3a45.612,45.612,0,0,0-7.854,7.741c-3.185,4.233-.96,5.23-4.885,9.19s-12,6.219-12,6.219S21.8,38.173,24.5,32.278A39.525,39.525,0,0,0,27.661,20.3s-3.419-1-8.515,2.748S12.878,28.53,7.28,35.286s-6,7.147-10.525,14.781-3.49,7.041-8.232,15.28S-16,75.524-22.212,83.021s-6.13,7.545-14.108,12.317-9.476,5.6-17.8,6.771a31.122,31.122,0,0,1-15.509-2.08Z"
+                  transform="translate(200 397)"
+                />
+                <path
+                  id="Tracé_176"
+                  data-name="Tracé 176"
+                  d="M3.338-42.946c6.7-7.626,9.168-8.492,17.662-9.769s8.365,1.775,16.313,4.66A139.331,139.331,0,0,1,52.8-41.175s.777,3.355-4.964,6.611-11.093,2.025-18,6.412-7.8,7.028-7.8,14.462S29.833,1.3,29.833,1.3,39.939,7.361,43.048,16.309s-1.912,21.146-1.912,21.146-1.827-11-6.259-17.83A30.351,30.351,0,0,0,24.542,9.765l-2.514,5.417-5.7-5.417-1.956,6.544L8.154,10.87A43.128,43.128,0,0,0,4.29,19.624C2.338,25.406.346,34,.346,34s-3.66-16-5.113-29.3,0-29.579,0-29.579S-3.365-35.32,3.338-42.946Z"
+                  transform="translate(209 524)"
+                />
+                <path
+                  id="Tracé_178"
+                  data-name="Tracé 178"
+                  d="M44.078-42.946c-6.7-7.626-9.168-8.492-17.661-9.769S18.053-50.94,10.1-48.055a139.32,139.32,0,0,0-15.481,6.88s-.777,3.355,4.963,6.611,11.093,2.025,18,6.412,7.8,7.028,7.8,14.462S17.584,1.3,17.584,1.3,7.478,7.361,4.37,16.309,6.282,37.455,6.282,37.455s1.827-11,6.258-17.83A30.35,30.35,0,0,1,22.875,9.765l2.514,5.417,5.7-5.417,1.956,6.544,6.217-5.439a43.129,43.129,0,0,1,3.864,8.754C45.078,25.406,47.069,34,47.069,34s3.66-16,5.113-29.3,0-29.579,0-29.579S50.78-35.32,44.078-42.946Z"
+                  transform="translate(116.613 388)"
+                />
+              </g>
+            </g>
+          </svg>
+
+          <h1>La Horde Des Mondes Oubliés</h1>
+        </a>
+
+        <!--<a href="#agenda">Agenda</a>
+        <a href="#recrut">Recrutement</a>-->
+      </header>
+      <section>
+        <p>
+          Nous sommes une troupe de mercenaires qui organisons des tournois
+          d’escrime médiévale sous forme de combats sportifs en armure. La
+          sécurité, le respect et la bonne humeur sont nos commandements.
+        </p>
+        <img
+          src="https://cdn.glitch.global/07a75344-3c45-4d2a-bd32-f0209ddff872/0_020.jpg?v=1650476877584"
+          width="100%"
+        />
+        <p>
+          Nous avons organisé le Championnat de France d’Escrime Historique
+          Amateur (CFEHA) en 2017 et 2018 et avons regroupé une dizaine de
+          troupes pour une trentaine de combattants.
+        </p>
+        <div id="cfeha">
+          <iframe
+            width="560"
+            height="315"
+            style="pointer-events: none"
+            src="https://www.youtube.com/embed/jtfgBGhFTtw?controls=0&autoplay=1&mute=1&amp;start=9"
+            title="YouTube video player"
+            frameborder="0"
+            allow="autoplay"
+          ></iframe>
+          <iframe
+            width="560"
+            height="315"
+            style="pointer-events: none"
+            src="https://www.youtube.com/embed/BUU4TfL37bI?controls=0&autoplay=1&mute=1&amp;start=21"
+            title="YouTube video player"
+            frameborder="0"
+            allow="autoplay"
+          ></iframe>
+          <iframe
+            width="560"
+            height="315"
+            style="pointer-events: none"
+            src="https://www.youtube.com/embed/ZzuaCtOIHTA?controls=0&autoplay=1&mute=1&amp;start=349"
+            title="YouTube video player"
+            frameborder="0"
+            allow="autoplay"
+          ></iframe>
+        </div>
+        <p>
+          Lors de nos démonstrations d’escrime historique, nous présentons les
+          différentes armes et pièces d’armures, techniques associées, période
+          et évolution.
+        </p>
+        <img
+          src="https://cdn.glitch.global/07a75344-3c45-4d2a-bd32-f0209ddff872/0_066.jpg?v=1650477384675"
+          width="100%"
+        />
+        <p>
+          Notre campement permet au public de voir la vie de camp du XIV au
+          XVème siècle ainsi que d’essayer les armes et pièces d’armures de
+          manière sécurisée et pédagogique.
+        </p>
+        <img
+          src="https://cdn.glitch.global/07a75344-3c45-4d2a-bd32-f0209ddff872/p2.jpg?v=1650477569231"
+          width="100%"
+        />
+      </section>
+      <section id="agenda">
+        <h1>Agenda</h1>
+        <div class="med">
+          <img
+            src="https://cdn.glitch.global/07a75344-3c45-4d2a-bd32-f0209ddff872/Cover-page-FB-1024x393.jpg?v=1650482334314"
+          />
+          <span class="date">7-8 mai 2022</span>
+          <span class="title"
+            ><a href="https://zenextconvention.fr/" target="_blank"
+              >Ze Next Convention</a
+            ></span
+          >
+          <span class="location"
+            >Ferme de Bois Briard, 91000 Évry-Courcouronnes</span
+          >
+        </div>
+
+        <div class="med">
+          <img
+            src="https://cdn.glitch.global/07a75344-3c45-4d2a-bd32-f0209ddff872/mery_en_fete_2011.jpg?v=1650482407652"
+          />
+          <span class="date">4-5 juin 2022</span>
+          <span class="title"
+            ><a
+              href="https://www.merysuroise.fr/index.php/Les-M%C3%A9di%C3%A9vales-de-M%C3%A9ry?idpage=109&afficheMenuContextuel=true"
+              target="_blank"
+              >Mery-sur-Oise</a
+            ></span
+          >
+          <span class="location">95540 Méry-sur-Oise</span>
+        </div>
+
+        <div class="med">
+          <img
+            src="https://cdn.glitch.global/07a75344-3c45-4d2a-bd32-f0209ddff872/bataille_et_escarmouche.jpg?v=1650482256609"
+          />
+          <span class="date">8-10 juillet 2022</span>
+          <span class="title"
+            ><a
+              href="https://www.facebook.com/groups/2089423731158662/announcements"
+              target="_blank"
+              >Bataille et Escarmouche</a
+            ></span
+          >
+          <span class="location">Champs de Compans D9, 77290 Compans</span>
+        </div>
+
+        <div class="med">
+          <img
+            src="https://cdn.glitch.global/07a75344-3c45-4d2a-bd32-f0209ddff872/259027149_105091308670595_763432996095324395_n.jpg?v=1650482273477"
+          />
+          <span class="date">15-16 octobre 2022</span>
+          <span class="title"
+            ><a
+              href="https://www.facebook.com/events/600845411131729/"
+              target="_blank"
+              >Les Genettes</a
+            ></span
+          >
+          <span class="location">Grande Pelouse, 93390 Clichy sous Bois</span>
+        </div>
+      </section>
+      <section id="recrut">
+        <h1>Recrutement</h1>
+        <p>
+          Nous recrutons des mercenaires en Île-de-France et dans le Loiret.
+          Nous leur fournissons le complément matériel nécessaire et
+          l’entraînement pour leurs permettre de pratiquer l’escrime médiévale
+          en armure ainsi que les Arts Martiaux Historique Européen (AMHE).
+          <!--Pour l’AMHE, certains de nos combattants se sont entraînés
+          à Noisy-le-Grand avec l’association Belamhe. Les entraînements
+          de la Horde sont organisés à Vacheresses-les-Basses pour ceux qui
+          souhaitent découvrir et pratiquer l’escrime dans le respect et la
+          bonne entente. Si vous êtes intéressé, n’hésitez pas à nous contacter
+          ! -->
+          <a class="button" href="mailto:contact@hdmo.fr" target="_blank" style="float:right"
+            >Devenir Mercenaire</a
+          >
+        </p>
+
+        <img
+          src="https://cdn.glitch.global/07a75344-3c45-4d2a-bd32-f0209ddff872/0_024.jpg?v=1650477371909"
+          width="100%"
+        />
+      </section>
+      <section id="services">
+        <h1>
+          Services
+        </h1>
+        <p>
+          Notre objectif est aussi de faciliter les activités en lien avec le médiéval. Pour cela, nous allons proposer plusieurs services :
+          <ul>
+            <li>Médiémap : Une carte des médiévales de France pour visualiser plus facilement celles proches de chez vous. Un aperçu est disponible <a href="https://hdmo-medieval-maps.glitch.me/" target="_blank">ici</a>.</li>
+            <li>Médiéverse : Un annuaire des troupes, mercenaires et échoppes pour faciliter l'organisation de vos fêtes.</li>
+            <li>Médiéscrime : Une application de gestion de championnats et de tournois d'escrime médiévale.</li>
+        </ul>
+        </p>
+      </section>
+    </main>
+    <footer>
+      La Horde Des Mondes Oubliés (HDMO) est une association à but non lucratif.
+    </footer>
   </body>
 </html>
